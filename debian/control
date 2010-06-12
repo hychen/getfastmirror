@@ -2,7 +2,7 @@ Source: getfastmirror
 Section: utils
 Priority: extra
 Maintainer: Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>
-Build-Depends: quilt (>= 0.46-7~), debhelper (>= 7)
+Build-Depends: debhelper (>= 7)
 Standards-Version: 3.8.4
 Homepage: http://github.com/hychen/getfastmirror/tree/master
 
