@@ -1,3 +1,9 @@
+getfastmirror (0.1.1-1) lucid; urgency=low
+
+  * Fix lucid-updates typo
+
+ -- hychen <hychen@xluna>  Sat, 12 Jun 2010 23:52:44 +0800
+
 getfastmirror (0.1-1) lucid; urgency=low
 
   * Initial release
