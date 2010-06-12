@@ -5,3 +5,11 @@ get fast apt mirror around you in command line.
 == how to ==
 
 user@host$ getfastmirror
+
+== Misc ==
+
+mirror_test.py is from python-software-properties package.
+
+== License ==
+
+GPLv2
