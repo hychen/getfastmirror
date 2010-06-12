@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>
 Build-Depends: debhelper (>= 7)
 Standards-Version: 3.8.4
-Homepage: http://github.com/hychen/getfastmirror/tree/master
+Homepage: https://launchpad.net/getfastmirror
 
 Package: getfastmirror
 Architecture: any
