@@ -1,0 +1,7 @@
+== getfastmirror ==
+
+get fast apt mirror around you in command line.
+
+== how to ==
+
+user@host$ getfastmirror

@@ -1,0 +1,15 @@
+*.pyc
+*~
+*.swp
+*.bak
+*egg-info*
+build
+dist
+bdist
+debian/files
+debian/*.debhelper.log
+debian/*.postinst.debhelper
+debian/*.preinst.debhelper
+debian/*.prerm.debhelper
+debian/*.substvars
+debian/*/
