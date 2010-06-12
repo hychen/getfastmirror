@@ -2,7 +2,19 @@
 
 get fast apt mirror around you in command line.
 
-== how to ==
+== Install ==
+
+=== APT install ===
+
+user@host$ sudo add-apt-repository ppa:ossug-hychen/getfastmirror
+user@host$ sudo apt-get isntall getfastmirror
+
+=== python way ===
+
+user@host$ apt-get install python-setuptools
+user@host$ ./setupt install
+
+== How to use ==
 
 user@host$ getfastmirror
 
