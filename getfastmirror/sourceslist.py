@@ -60,14 +60,14 @@ class APTsource(object):
 ## distribution."""))
         f('')
         f(make_debentry(url,
-                        code+'updates',
+                        code+'-updates',
                         ['universe'],
                         """## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
 ## team. Also, please note that software in universe WILL NOT receive any
 ## review or updates from the Ubuntu security team."""))
         f('')
         f(make_debentry(url,
-                        code+'updates',
+                        code+'-updates',
                         ['multiverse'],
                         """## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu.
 ## team, and may not be under a free licence. Please satisfy yourself as to.
