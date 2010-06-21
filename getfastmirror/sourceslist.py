@@ -5,9 +5,10 @@ import re
 
 from aptsources import sourceslist as aptsources_sourceslist
 
-__DEBUG__ = False
+__DEBUG__ = True
 
 class InvaldeAction(Exception): pass
+class FiltersNotFound(Exception):   pass
 
 class RuleEntry(object):
     #{{{attrs
@@ -93,8 +94,8 @@ class SourcesList(aptsources_sourceslist.SourcesList):
                     self.matcher.match(source)
     #}}}
 
-    #{{{def applyfilters(self, filters):
-    def applyfilters(self, filters):
+    #{{{def apply_filters(self, filters):
+    def apply_filters(self, filters):
         for rule in filters:
             for entry in self.list:
                 self._debug(entry)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding=utf8 -*-
 #
-# Copyright © 2010 Hsin-Yi Chen (hychen)
+# Author Hsin-Yi Chen (hychen)
 #
 # Lazyscripts is a free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ except ImportError:
 
 setup(
     name = 'getfastmirror',
-    version = '0.1',
+    version = '0.2',
     description = 'get fast apt mirror in command line',
     author = 'Hsin Yi Chen 陳信屹 (hychen)',
     author_email = 'ossug.hychen@gmail.com',

@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding=utf8 -*-
 #
-# Copyright © 2010 Canonical Ltd.
-#
-# Author Hsin-Yi Chen
+# Author 2010 Hsin-Yi Chen
 #
 # This is a free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,16 +23,17 @@ import shutil
 import tempfile
 
 from getfastmirror import sourceslist
+from getfastmirror import console
 
-class SourcesListTestCase(unittest.TestCase):
+class ConsoleTestCase(unittest.TestCase):
 
     #{{{def setUp(self):
     def setUp(self):
         self.tmpdir = os.path.join(tempfile.gettempdir(), 'getfastboot')
         self.rulesdir = os.path.join(self.tmpdir, 'filters')
         self.datadir = os.path.join(os.path.dirname(__file__), 'data')
+        self.update_cmd = ['update', '-r', self.tmpdir]
         os.system('cp -r %s  %s' % (self.datadir, self.tmpdir))
-        self.sourceslist = sourceslist.SourcesList()
     #}}}
 
     #{{{def tearDown(self):
@@ -42,26 +41,46 @@ class SourcesListTestCase(unittest.TestCase):
         shutil.rmtree(self.tmpdir)
     #}}}
 
-    #{{{def test_refresh(self):
-    def test_refresh(self):
-        self.sourceslist.refresh(self.tmpdir)
-        self.assertEquals(self.sourceslist.list[0].file,
-                    os.path.join(self.tmpdir, 'sources.list'))
+    #{{{def test_basic(self):
+        def test_basic(self):
+            admin = console.Admin(['-r', self.tmpdir])
+        self.assertEquals(self.admin.sourceslist.list[0].file,
+                        os.path.join(self.tmpdir, 'sources.list'))
     #}}}
 
-    #{{{def test_filters(self):
-    def test_filters(self):
+    #{{{def _mk_admin(self, args):
+    def _mk_admin(self, args):
+        self.update_cmd.extend(args)
+        self.admin = console.Admin(self.update_cmd)
+    #}}}
+
+    #{{{def test_applyfilters(self):
+    def test_applyfilters(self):
         rulepath = os.path.join(self.rulesdir, 'test_rules.ini')
-        self.sourceslist.refresh(self.tmpdir)
-        self.sourceslist.apply_filters(sourceslist.RulesList(rulepath))
-        self.sourceslist.save()
+        self._mk_admin(['-f', rulepath])
+        self.assertRaises(sourceslist.FiltersNotFound, self.admin.apply_filters)
+        # test prepare
+        self.admin.prepare_filters()
+        self.assertEquals(self.admin.filters[0].list[0].name, 'disable-updates')
+        # test apply filters
+        self.admin.apply_filters()
+        self.admin.sourceslist.save()
+        ret = open(os.path.join(self.tmpdir, 'sources.list'), 'r').read().split('\n')
+        self.assertEquals(testreulst__applyfilters, ret)
+    #}}}
+
+    #{{{def test_applyfilters_func(self):
+    def test_applyfilters_func(self):
+        rulepath = os.path.join(self.rulesdir, 'test_rules.ini')
+        self._mk_admin(['-f', rulepath])
+        self.admin.run()
         ret = open(os.path.join(self.tmpdir, 'sources.list'), 'r').read().split('\n')
         self.assertEquals(testreulst__applyfilters, ret)
     #}}}
 pass
 
 def suite():
-    return unittest.makeSuite(SourcesListTestCase, 'test')
+    return unittest.makeSuite(ConsoleTestCase, 'test')
 
 #{{{TEST RESULTS
 testreulst__applyfilters = [
