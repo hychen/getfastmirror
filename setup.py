@@ -30,6 +30,7 @@ setup(
     author_email = 'ossug.hychen@gmail.com',
     license = 'GPLv2',
     zip_safe=False,
+    test_suite = 'tests.suite',
     entry_points = """
     [console_scripts]
         getfastmirror = getfastmirror:run
