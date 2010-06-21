@@ -16,7 +16,22 @@ user@host$ ./setupt install
 
 == How to use ==
 
-user@host$ getfastmirror
+# use fast mirror by local
+user@host$ getfastmirror update -l zh_TW.UTF-8
+
+# use fast mirror by network status
+user@host$ getfastmirror update -t
+
+# enabel/disable entries in APT source by filter file.
+# this means your can use REGEX to disable/enable entries
+user@host$ getfastmirror update -f filter.ini
+
+Example of filter.ini
+
+    [disable-security]
+    uri = http://\w*security.ubuntu.com/ubuntu*
+    dist = \w*-security
+    action = disable
 
 == Misc ==
 
