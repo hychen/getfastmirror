@@ -24,13 +24,14 @@ except ImportError:
 
 setup(
     name = 'getfastmirror',
-    version = '0.2',
+    version = '0.2.4',
     description = 'get fast apt mirror in command line',
     author = 'Hsin Yi Chen 陳信屹 (hychen)',
     author_email = 'ossug.hychen@gmail.com',
     license = 'GPLv2',
     zip_safe=False,
     test_suite = 'tests.suite',
+    packages = find_packages(exclude=['tests']),
     entry_points = """
     [console_scripts]
         getfastmirror = getfastmirror:run
