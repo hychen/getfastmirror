@@ -1,10 +1,34 @@
+getfastmirror (0.2.4-1) lucid; urgency=low
+
+  * Fix Python module does not be installed.
+
+ -- Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>  Wed, 23 Jun 2010 16:48:07 +0800
+
+getfastmirror (0.2.3-1) lucid; urgency=low
+
+  * Add missing build depency (python-setuptools)
+
+ -- Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>  Wed, 23 Jun 2010 16:16:11 +0800
+
+getfastmirror (0.2.2-1) lucid; urgency=low
+
+  * Add missing build depency (python-central)
+
+ -- Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>  Wed, 23 Jun 2010 15:44:52 +0800
+
+getfastmirror (0.2.1-1) lucid; urgency=low
+
+  * Fix missing executable file after installed package.
+
+ -- Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>  Wed, 23 Jun 2010 15:25:11 +0800
+
 getfastmirror (0.2-1) lucid; urgency=low
 
   * Support to enable or disable entries in APT sources.list by filter file.
   * Change APT sources.lsit to use fast mirror by network status.
   * Change APT sources.lsit to use fast mirror by country(locale).
 
- -- Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com> Tue, 22 Jun 2010 01:03:16 +0800
+ -- Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>  Tue, 22 Jun 2010 01:03:16 +0800
 
 getfastmirror (0.1.1-1) lucid; urgency=low
 
