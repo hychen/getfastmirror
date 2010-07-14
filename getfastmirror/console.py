@@ -8,7 +8,7 @@ from getfastmirror import sourceslist
 from getfastmirror import utils
 
 __DESC__ = "Get and update fast mirror of APT archive around you."
-__VERSION__ = "%prog 0.2.4"
+__VERSION__ = "%prog 0.2.5"
 
 class Admin(object):
     "Console Managment"

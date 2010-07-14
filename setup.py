@@ -24,7 +24,7 @@ except ImportError:
 
 setup(
     name = 'getfastmirror',
-    version = '0.2.4',
+    version = '0.2.5',
     description = 'get fast apt mirror in command line',
     author = 'Hsin Yi Chen 陳信屹 (hychen)',
     author_email = 'ossug.hychen@gmail.com',
