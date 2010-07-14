@@ -1,0 +1,13 @@
+Source: getfastmirror
+Section: utils
+Priority: extra
+Maintainer: Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>
+Build-Depends: debhelper (>= 7), python-central, python-setuptools
+Standards-Version: 3.8.4
+Homepage: https://launchpad.net/getfastmirror
+
+Package: getfastmirror
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python, python-setuptools
+Description: get fast APT mirror in command line
+ get a fast APT mirror and generate a apt source list file in command line.
