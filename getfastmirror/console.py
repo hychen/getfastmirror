@@ -99,7 +99,7 @@ class Admin(object):
         code = utils.get_country_code(locale)
         if not code:
             return False
-        url = "http://%s.ubuntu.com/ubuntu/" % code
+        url = "http://%s.archive.ubuntu.com/ubuntu/" % code
         self.dist.change_server(url)
     #}}}
 
